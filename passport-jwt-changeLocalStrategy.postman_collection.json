@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "fbc5e2e6-aba0-4ae7-8a6b-f2d980eeda37",
+		"name": "passport-jwt-changeLocalStrategy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "indexRouter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"phone_number\": 9000000007,\n\t\"password\":\"password7\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user registration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"avi6@gmail.com\",\n\t\"phone_number\" : 9000000006,\n\t\"password\":\"password6\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImlzcyI6Im9tbml3eXNlIiwic3ViIjoiNWU4NWFkZWQxOGE0MGYzZDM4MGQ1ZmE3IiwiaWF0IjoxNTg2MDg3MjMzNjYxLCJleHAiOjE1ODYxNzM2MzM2NjF9.sovqJBVWTxyH1Ap5--78PUWNTaCo5MYANouozH0QxE8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user/:_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						":_id"
+					],
+					"variable": [
+						{
+							"key": "_id",
+							"value": "5e85ae0a18a40f3d380d5fad"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\":\"user-1\",\n    \"last_name\":\"Singh\",\n    \"phone_number\":\"9000000001\",\n    \"password\":\"123\",\n    \"email\" : \"avi1@gmail.com\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/register/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"register",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find All Users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTk1ZmY3YTgzZTFhYzA5MjQyNmVmNmUiLCJpYXQiOjE1ODY4OTczNjQsImV4cCI6MTU4NjkwMDk2NH0.zU7NEu4RArvBY7cKe3pWVpDs38F8rA5u56Ha3UfWkTo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user/details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "single user details",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTkxY2ExM2IzZGY5MTM0MjBkODg0YTgiLCJpYXQiOjE1ODY2MTI3OTgsImV4cCI6MTU4NjYxNjM5OH0.lyc0GpxzWFDlU_e_iz0GWM3HIUL7TcpaAqtEIx9i2h0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/user/:_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						":_id"
+					],
+					"variable": [
+						{
+							"key": "_id",
+							"value": "5e91ca13b3df913420d884a8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidXNlciIsImlzcyI6Im9tbml3eXNlIiwic3ViIjoiNWU4NWFkZWQxOGE0MGYzZDM4MGQ1ZmE3IiwiaWF0IjoxNTg2MDg3MjMzNjYxLCJleHAiOjE1ODYxNzM2MzM2NjF9.sovqJBVWTxyH1Ap5--78PUWNTaCo5MYANouozH0QxE8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\":\"user-4\",\n    \"last_name\":\"reddy5\",\n    \"phone_number\":\"9000000004\",\n    \"password\":\"123\",\n    \"email\" : \"avi4@gmail.com\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/:_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						":_id"
+					],
+					"variable": [
+						{
+							"key": "_id",
+							"value": "5e85ae0018a40f3d380d5fab"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
